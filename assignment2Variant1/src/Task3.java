@@ -9,7 +9,7 @@ public class Task3 {
             if (token.equals("+") || token.equals("-") ||
                     token.equals("*") || token.equals("/")) {
                 int b = stack.pop();
-                int a = stack.pop();
+                int a = stack.pop(); / 1 2 + 3 *
                 int result = 0;
                 switch (token) {
                     case "+":

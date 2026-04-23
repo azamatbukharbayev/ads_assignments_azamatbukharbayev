@@ -12,7 +12,7 @@ public class Task2 {
 
     public static Node reverseList(Node head) {
         Node prev = null;
-        Node current = head;
+        Node current = head;  // null  <- 1 < - 2 <- 3
         while (current != null) {
             Node next = current.next;
             current.next = prev;
