@@ -77,12 +77,5 @@ public class Bubble {
         System.out.println("\n\n====== Early Exit Demo (already sorted) ======");
         System.out.println("Input: " + Arrays.toString(sorted));
         bubbleSort(sorted);
-
-        System.out.println("\n--- Early Exit Explanation ---");
-        System.out.println("The 'Early Exit' condition works like this:");
-        System.out.println("Before each pass, we set a flag 'swapped = false'.");
-        System.out.println("If we go through the entire pass without swapping,");
-        System.out.println("it means every adjacent pair is already in order,");
-        System.out.println("which means the whole array is sorted. So we stop.");
     }
 }
