@@ -115,9 +115,5 @@ public class DivideAndConquer {
         System.out.println("  Naive approach:  2*(N-1) = " + (2 * (data.length - 1)) + " comparisons");
         System.out.println("  D&C approach:    ~3N/2-2 = " + comparisonCount + " comparisons");
         System.out.println("  D&C saves about " + (2 * (data.length - 1) - comparisonCount) + " comparisons!");
-        System.out.println();
-        System.out.println("  Both give the same answer, but D&C uses fewer comparisons.");
-        System.out.println("  Naive Time: O(N), Space: O(1)");
-        System.out.println("  D&C   Time: O(N), Space: O(log N) due to recursion stack");
     }
 }

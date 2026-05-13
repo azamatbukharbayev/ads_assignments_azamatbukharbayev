@@ -36,12 +36,69 @@ public class BinarySearch {
         return -1;
     }
 
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+
+        int mid = (left + right) / 2;
+
+        mergeSort(arr, left, mid);
+
+        mergeSort(arr, mid + 1, right);
+
+        merge(arr, left, mid, right);
+    }
+
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int sizeLeft = mid - left + 1;
+        int sizeRight = right - mid;
+
+        int[] leftArr = new int[sizeLeft];
+        int[] rightArr = new int[sizeRight];
+
+        for (int i = 0; i < sizeLeft; i++) {
+            leftArr[i] = arr[left + i];
+        }
+        for (int j = 0; j < sizeRight; j++) {
+            rightArr[j] = arr[mid + 1 + j];
+        }
+
+        int i = 0;
+        int j = 0;
+        int k = left;
+
+        while (i < sizeLeft && j < sizeRight) {
+            if (leftArr[i] <= rightArr[j]) {
+                arr[k] = leftArr[i];
+                i++;
+            } else {
+                arr[k] = rightArr[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < sizeLeft) {
+            arr[k] = leftArr[i];
+            i++;
+            k++;
+        }
+
+        while (j < sizeRight) {
+            arr[k] = rightArr[j];
+            j++;
+            k++;
+        }
+    }
+
     public static void main(String[] args) {
         int[] data = {43, 42, 90, 74, 10, 29, 68, 73, 75, 62};
 
         System.out.println("Original (unsorted) array: " + Arrays.toString(data));
 
-        Arrays.sort(data);
+        System.out.println("\n--- Sorting with Merge Sort ---");
+        mergeSort(data, 0, data.length - 1);
         System.out.println("Sorted array:              " + Arrays.toString(data));
         System.out.println();
 
